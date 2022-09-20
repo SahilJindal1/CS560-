@@ -126,7 +126,10 @@ Block size of DES3 is 8 bytes
 
 Avalanche affect of DES3 in my experient showed that by changing only one bit in the hex files there was a difference of 124 bits in the encryption files. This shows that changes in one bit can lead to huge changes in the encryptions.
 
-Percentage = ------------------------------------
+Total size of both the files was 40 bytes = 320 bits
+
+Avalanche effect = 124/320 *100= 38.75 %
+
 
 #### Q4.
 
@@ -162,7 +165,10 @@ Percentage = ------------------------------------
 ```bitdiff -f avalanche-out1-aes-128.bin avalanche-out2-aes-128.bin -s 8```
 161
 
-Avalanche effect ----------------------------
+
+Total file size is 48 bytes =  384 bits
+
+Avalanche effect  = 161/384*100 = 41.927 %
 
 #### Q7.
 
@@ -197,7 +203,9 @@ Avalanche effect ----------------------------
 ```$ bitdiff -f avalanche-out1-aes-256.bin avalanche-out2-aes-256.bin -s 8```
 163
 
-Avalanche Effect -------------------------------------
+Total file size  = 48 Bytes = 384 bits
+
+Avalanche Effect  = 163/384*100 = 42.44791
 
 ## 2.3- Effect of Chaining Mode in Encryption
 

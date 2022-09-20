@@ -80,43 +80,43 @@ Length of key and iv is 32
 
 
 
-2.2
+## 2.2- The Avalanche Effect of Encryption
 
-Exercise 03
+### Exercise 03- The Avalanche Effect of Encryption
 
-Q1. 
+#### Q1. 
 
-echo -ne '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' > avalanche-in1.hex
+```echo -ne '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' > avalanche-in1.hex```
 
-openssl enc -des3 -e -in avalanche-in1.hex -out avalanche-out1-des3.bin -pass file:mypassword -iter 2 -p 
+```openssl enc -des3 -e -in avalanche-in1.hex -out avalanche-out1-des3.bin -pass file:mypassword -iter 2 -p ```
 
-salt=3EB4030474481200
-key=7F12BD53A5DA6BE9136B44CC06DB61CA5D22C4FFF3C06C25
-iv =970FCEA4D2AF6FD2
-
-
-openssl enc -des3 -e -in avalanche-in2.hex -out avalanche-out2-des3.bin -pass file:mypassword -iter 2 -p 
-
-salt=2DEEF76A51943023
-key=37494395CEEE067C1B9A1F718C2D02A978498E01101D2C36
-iv =3A0EBC286E793F0A
+##### salt=3EB4030474481200
+##### key=7F12BD53A5DA6BE9136B44CC06DB61CA5D22C4FFF3C06C25
+##### iv =970FCEA4D2AF6FD2
 
 
-Q2.
+```openssl enc -des3 -e -in avalanche-in2.hex -out avalanche-out2-des3.bin -pass file:mypassword -iter 2 -p ```
+
+##### salt=2DEEF76A51943023
+##### key=37494395CEEE067C1B9A1F718C2D02A978498E01101D2C36
+##### iv =3A0EBC286E793F0A
+
+
+#### Q2.
 
 Length of salt is 16 (8 bytes)
 Length of key is 48 (24 bytes)
 Length of iv is 16 (8 bytes)
 Block size of des3 is 8 bytes
 
-Q3.
+#### Q3.
 
 bitdiff -f avalanche-out1-des3.bin avalanche-out2-des3.bin -s 8         
 124
 
 
 
-Q4.
+#### Q4.
 
 $ openssl enc -aes-128-cbc -e -in avalanche-in1.hex -out avalanche-out1-aes-128.bin -pass file:mypassword -iter 2 -p
 
